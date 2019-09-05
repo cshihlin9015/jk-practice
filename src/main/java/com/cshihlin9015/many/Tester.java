@@ -1,13 +1,41 @@
 package com.cshihlin9015.many;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Tester {
     public static void main(String[] args) {
 //        arrayTest();
 //        list();
+//        set();
+//        map();
+    }
+
+    private static void map() {
+        HashMap<String, String> stocks = new HashMap<>();
+        stocks.put("2330", "TSMC");
+        stocks.put("2317", "Foxconn");
+        System.out.println(stocks); // 印出 {2317=Foxconn, 2330=TSMC}
+        stocks.put("2330", "台積電");
+        System.out.println(stocks); // 印出 {2317=Foxconn, 2330=台積電}
+        System.out.println(stocks.get("2330"));
+
+        for (String key : stocks.keySet()) {
+            System.out.println(stocks.get(key));
+        }
+    }
+
+    private static void set() {
+        HashSet<Integer> hashSet = new HashSet<>();
+        hashSet.add(6);
+        hashSet.add(1);
+        hashSet.add(4);
+        hashSet.add(7);
+        hashSet.add(7);
+        System.out.println(hashSet); // 印出 [1, 4, 6, 7]，沒順序性，沒排序功能
+
+        for (int n : hashSet) {
+            System.out.println(n);
+        }
     }
 
     private static void list() {
