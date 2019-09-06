@@ -13,6 +13,14 @@ public class Tester {
     public static void main(String[] args) {
 //        java7();
 //        java8();
+
+        LocalDateTime enter = LocalDateTime.of(2019, 9, 6, 8, 0, 0);
+        LocalDateTime leave = LocalDateTime.of(2019, 9, 6, 10, 3, 0);
+        Car car1 = new Car("QK-0366", enter);
+        car1.setLeave(leave);
+        System.out.println(car1.getDuration());
+        long hours = (long) Math.ceil(car1.getDuration() / 60.0);
+        System.out.println(hours);
     }
 
     private static void java8() {
